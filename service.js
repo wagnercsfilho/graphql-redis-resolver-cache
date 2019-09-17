@@ -56,8 +56,8 @@ export default {
     console.log("service getChannels");
     return resolve(channels).delay(delay);
   },
-  getChannelsById: id => {
-    console.log("service getChannelsById");
+  getChannelById: id => {
+    console.log("service getChannelById");
     return resolve(channels.find(channel => channel.id == id)).delay(delay);
   },
   getMessages: (params = {}) => {

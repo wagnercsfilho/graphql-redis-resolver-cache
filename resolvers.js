@@ -16,12 +16,12 @@ export default {
     })
   },
   Query: {
-    channels: () => {
+    channels: withCache(() => {
       return service.getChannels();
-    },
-    channel: (root, { id }) => {
+    }),
+    channel: withCache((root, { id }) => {
       return service.getChannelById(id);
-    },
+    }),
     messages: withCache((_, { limit }) => {
       return service.getMessages({ limit });
     })
